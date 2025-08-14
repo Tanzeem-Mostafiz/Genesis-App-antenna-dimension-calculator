@@ -8,13 +8,13 @@ Live Demo: [https://genesis-app.streamlit.app/](https://genesis-app.streamlit.ap
 
 ## Features
 
-- Predicts **Z_real** and **Z_imaginary** of antenna input impedance using the **Genesis Wing** model.  
-- Predicts physical design parameters using the **Genesis Ray** model:
+1. Predicts **Z_real** and **Z_imaginary** of antenna input impedance using the **Genesis Wing** model.  
+2. Predicts physical design parameters using the **Genesis Ray** model:
   - Patch Width  
   - Patch Length  
   - Feedline Width  
   - Achievable Bandwidth  
-- Dynamic interface built with **Streamlit**.   
+3. Dynamic interface built with **Streamlit**.   
 
 ---
 
@@ -36,7 +36,7 @@ python -m venv .venv
 ```bash
 .venv\Scripts\activate
 ```
-  - macOS/Linux
+   - macOS/Linux
 ```bash
 source .venv/bin/activate
 ```
