@@ -74,6 +74,8 @@ streamlit run app.py
 Genesis-App/
 │
 ├── assets/                # Images and icons used in the app
+├── data/
+│ ├── noah.csv              
 ├── model/                 # Trained machine learning models
 │ ├── genesis_ray.pkl
 │ └── genesis_wing.pkl
