@@ -23,7 +23,62 @@ Live Demo: [https://genesis-app.streamlit.app/](https://genesis-app.streamlit.ap
 1. **Clone the repository**
 ```bash
 git clone https://github.com/YOUR_USERNAME/Genesis-App.git
-cd Genesis-App```
+cd Genesis-App
+```
 
-2. 
+2. **Create a virtual environment**
+```bash
+python -m venv .venv
+```
 
+3. **Activate the virtual environment**
+   Windows
+```bash
+.venv\Scripts\activate
+```
+  macOS/Linux
+```bash
+source .venv/bin/activate
+```
+
+4. Install dependencies
+```bash
+pip install -r requirements.txt
+```
+
+## Usage 
+Run the Streamlit app locally:
+```bash
+streamlit run app.py
+```
+
+1. Enter your electrical specifications:
+  - Resonant Frequency (GHz)
+  - Minimum S11 (dB)
+  - Desired Bandwidth (GHz)
+2. Click Predict Antenna Parameters.
+3. View predicted antenna geometry and achievable bandwidth.
+
+## Folder Structure
+```bash
+Genesis-App/
+│
+├── assets/                 # Images and icons used in the app
+├── model/                  # Trained machine learning models
+│   ├── genesis_ray.pkl
+│   └── genesis_wing.pkl
+├── app.py                  # Main Streamlit app
+├── requirements.txt        # Python dependencies
+└── README.md               # This file
+```
+
+## Technologies Used
+ - Python 3
+ - Streamlit
+ - Pandas, NumPy, Matplotlib, Plotly
+ - CatBoost (machine learning models)
+
+## License
+
+This project is open-source and available under the **MIT License**.  
+See the [LICENSE](LICENSE) file for details.
