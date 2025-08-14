@@ -8,15 +8,26 @@ Live Demo: [https://genesis-app.streamlit.app/](https://genesis-app.streamlit.ap
 
 ## Features
 
-1. Predicts **Z_real** and **Z_imaginary** of antenna input impedance using the **Genesis Wing** model.  
-2. Predicts physical design parameters using the **Genesis Ray** model:
-    - Patch Width  
-    - Patch Length  
-    - Feedline Width  
-    - Achievable Bandwidth  
-3. Dynamic interface built with **Streamlit**.   
+1. You enter: Resonant Frequency, Minimum S11, and Bandwidth.
 
----
+2. Genesis Wing model takes these 3 values and predicts the real (Z_real) and imaginary (Z_imag) parts of the antenna input impedance.
+
+    - Think of it as a translator that converts your desired electrical performance into impedance characteristics.
+
+3. Genesis Ray model takes:
+
+    - Your original frequency & S11
+    - The Z_real & Z_imag from Genesis Wing and predicts the physical design:
+    - Patch Width
+    - Patch Length
+    - Feedline Width
+    - Achievable Bandwidth
+
+4. Streamlit simply collects your inputs, feeds them to both models in sequence, and displays the final predicted geometry + performance.
+
+It’s basically a two-step AI pipeline:
+Specs → (Genesis Wing) → Impedance → (Genesis Ray) → Geometry ✅
+
 
 ## Installation
 
