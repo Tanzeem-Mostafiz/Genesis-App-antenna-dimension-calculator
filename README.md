@@ -10,10 +10,10 @@ Live Demo: [https://genesis-app.streamlit.app/](https://genesis-app.streamlit.ap
 
 1. Predicts **Z_real** and **Z_imaginary** of antenna input impedance using the **Genesis Wing** model.  
 2. Predicts physical design parameters using the **Genesis Ray** model:
-  - Patch Width  
-  - Patch Length  
-  - Feedline Width  
-  - Achievable Bandwidth  
+    - Patch Width  
+    - Patch Length  
+    - Feedline Width  
+    - Achievable Bandwidth  
 3. Dynamic interface built with **Streamlit**.   
 
 ---
