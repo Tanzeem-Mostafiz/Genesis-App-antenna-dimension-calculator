@@ -32,11 +32,11 @@ python -m venv .venv
 ```
 
 3. **Activate the virtual environment**
-   Windows
+   - Windows
 ```bash
 .venv\Scripts\activate
 ```
-  macOS/Linux
+  - macOS/Linux
 ```bash
 source .venv/bin/activate
 ```
@@ -53,9 +53,9 @@ streamlit run app.py
 ```
 
 1. Enter your electrical specifications:
-  - Resonant Frequency (GHz)
-  - Minimum S11 (dB)
-  - Desired Bandwidth (GHz)
+    - Resonant Frequency (GHz)
+    - Minimum S11 (dB)
+    - Desired Bandwidth (GHz)
 2. Click Predict Antenna Parameters.
 3. View predicted antenna geometry and achievable bandwidth.
 
@@ -63,13 +63,15 @@ streamlit run app.py
 ```bash
 Genesis-App/
 │
-├── assets/                 # Images and icons used in the app
-├── model/                  # Trained machine learning models
-│   ├── genesis_ray.pkl
-│   └── genesis_wing.pkl
-├── app.py                  # Main Streamlit app
-├── requirements.txt        # Python dependencies
-└── README.md               # This file
+├── assets/                # Images and icons used in the app
+├── model/                 # Trained machine learning models
+│ ├── genesis_ray.pkl
+│ └── genesis_wing.pkl
+├── app.py                 # Main Streamlit app
+├── requirements.txt       # Python dependencies
+├── LICENSE                # MIT License file
+└── README.md              # This file
+
 ```
 
 ## Technologies Used
