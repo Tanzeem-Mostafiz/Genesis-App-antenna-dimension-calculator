@@ -25,8 +25,7 @@ Live Demo: [https://genesis-app.streamlit.app/](https://genesis-app.streamlit.ap
 
 4. Streamlit simply collects your inputs, feeds them to both models in sequence, and displays the final predicted geometry + performance.
 
-It’s basically a two-step AI pipeline
-    - Specs -> (Genesis Wing) -> Impedance -> (Genesis Ray) → Geometry
+It’s basically a two-step AI pipeline: **Specs -> (Genesis Wing) -> Impedance -> (Genesis Ray) -> Geometry**
 
 
 ## Installation
