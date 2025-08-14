@@ -22,7 +22,7 @@ Live Demo: [https://genesis-app.streamlit.app/](https://genesis-app.streamlit.ap
 
 1. **Clone the repository**
 ```bash
-git clone [https://github.com/YOUR_USERNAME/Genesis-App.git](https://github.com/Tanzeem-Mostafiz/genesis-app-antenna-dimension-predictor)
+git clone https://github.com/Tanzeem-Mostafiz/genesis-app-antenna-dimension-predictor
 cd Genesis-App
 ```
 
