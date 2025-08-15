@@ -163,7 +163,7 @@ bandwidth = st.number_input(
 # ==============================
 # Prediction
 # ==============================
-if st.button("Predict Antenna Parameters"):
+if st.button("PREDICT DIMENSIONS"):
     # Step 1: Genesis Wing predicts Z_real & Z_imag
     z_pred = genesis_wing.predict(np.array([[freq, s11, bandwidth]]))
     z_real, z_imag = z_pred[0]
@@ -181,14 +181,14 @@ if st.button("Predict Antenna Parameters"):
         <style>
         .clean-table {
             border-collapse: collapse;
-            margin-top: 8px;
+            margin-top: 1px;
         }
         .clean-table td {
             padding: 4px 16px;
             color: white;
             font-size: 16.5px;
             font-weight: bold;
-            background-color: rgba(0, 0, 0, 0.55);
+            background-color: rgba(0, 0, 0, 0);
         }
         </style>
     """, unsafe_allow_html=True)
