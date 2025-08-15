@@ -66,7 +66,40 @@ def display_right_side(image_path, width=80, top_percent=40):
                width: {width}px; transform: translateY(-50%); z-index:1000;">
     ''', unsafe_allow_html=True)
 
-display_right_side("assets/back.png", width=300, top_percent=50)  # vertically centered
+display_right_side("assets/back.png", width=300, top_percent=33)  # vertically centered
+
+# Display constant values box under the right-side image
+def display_constants_box():
+    constants_html = """
+    <div style="
+        position: fixed;
+        top: 52%;
+        right: 50px;
+        width: 270px;
+        background-color: rgba(0, 0, 0, 0.35);
+        padding: 10px 0 10px 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        font-size: 15px;
+        line-height: 1.7;
+        color: white
+        z-index: 1001;
+    ">
+        <b style='font-size: 16px'>Constant Values of the Antenna:</b><br><br>
+        Substrate: Rogers RT5880 (εr)<br>
+        Dielectric contant, εr: 2.2<br>
+        Substrate Thickness: 0.254 mm<br>
+        Substrate Width: 4.602 mm<br>
+        Substrate Length: 3.996 mm<br>
+        Ground Width: 4.602 mm<br>
+        Ground Length: 3.996 mm<br>
+        Inset Width: 0.395 mm<br>
+        Inset Length: 0.6 mm
+    </div>
+    """
+    st.markdown(constants_html, unsafe_allow_html=True)
+
+display_constants_box()
 
 
 # ==============================
@@ -76,24 +109,25 @@ st.title("Genesis Antenna Predictor in 37 to 40 GHz Range")
 # ==============================
 # Input Fields
 # ==============================
+
 st.subheader("Enter Electrical Specifications")
 
 freq = st.number_input(
     "Resonant Frequency (GHz)",
     min_value=37.0, max_value=40.0,
-    value=38.0, step=0.01, format="%.3f"
+    value=38.0, step=0.1, format="%.3f"
 )
 
 s11 = st.number_input(
     "Minimum S11 (dB)",
-    min_value=-50.0, max_value=-10.0,
+    min_value=-60.0, max_value=-10.0,
     value=-20.0, step=0.1, format="%.3f"
 )
 
 bandwidth = st.number_input(
     "Desired Bandwidth (GHz)",
-    min_value=0.1, max_value=5.0,
-    value=1.0, step=0.01, format="%.3f"
+    min_value=0.1, max_value=10.0,
+    value=1.0, step=0.1, format="%.3f"
 )
 
 # ==============================
@@ -109,12 +143,25 @@ if st.button("Predict Antenna Parameters"):
     patch_length, patch_width, feed_width, final_bw = geom_pred[0]
     
     # ==============================
-    # Show Results
+    # Show Results with styled boxes
     # ==============================
     st.success("Prediction Complete ✅")
     st.subheader("Predicted Antenna Parameters")
-    st.write(f"**Patch Length:** {patch_length:.4f} mm")
-    st.write(f"**Patch Width:** {patch_width:.4f} mm")
-    st.write(f"**Feedline Width:** {feed_width:.4f} mm")
-    st.write(f"**Achievable Bandwidth:** {final_bw:.4f} GHz")
 
+    st.markdown("""
+        <style>
+        .result-box {
+            background-color: rgba(0, 0, 0, 0.55);
+            padding: 8px;
+            border-radius: 5px;
+            margin-bottom: 6px;
+            color: white;
+            font-weight: bold;
+        }
+        </style>
+    """, unsafe_allow_html=True)
+
+    st.markdown(f'<div class="result-box">Patch Length: {patch_length:.4f} mm</div>', unsafe_allow_html=True)
+    st.markdown(f'<div class="result-box">Patch Width: {patch_width:.4f} mm</div>', unsafe_allow_html=True)
+    st.markdown(f'<div class="result-box">Feedline Width: {feed_width:.4f} mm</div>', unsafe_allow_html=True)
+    st.markdown(f'<div class="result-box">Achievable Bandwidth: {final_bw:.4f} GHz</div>', unsafe_allow_html=True)
