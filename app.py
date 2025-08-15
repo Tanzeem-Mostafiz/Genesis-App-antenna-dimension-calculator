@@ -82,7 +82,7 @@ def display_constants_box():
         box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         font-size: 15px;
         line-height: 1.7;
-        color: white
+        color: white;
         z-index: 1001;
     ">
         <b style='font-size: 16px'>Constant Values of the Antenna:</b><br><br>
@@ -91,8 +91,7 @@ def display_constants_box():
         Substrate Thickness: 0.254 mm<br>
         Substrate Width: 4.602 mm<br>
         Substrate Length: 3.996 mm<br>
-        Ground Width: 4.602 mm<br>
-        Ground Length: 3.996 mm<br>
+        Ground Width: Full<br>
         Inset Width: 0.395 mm<br>
         Inset Length: 0.6 mm
     </div>
@@ -104,31 +103,62 @@ display_constants_box()
 
 # ==============================
 
-st.title("Genesis Antenna Predictor in 37 to 40 GHz Range")
+# Custom title
+st.markdown("<h1 class='big-title'>Genesis Antenna Predictor <br><span style='font-size:30px; color:cyan;'>37 to 40 GHz Range</span></h1>", unsafe_allow_html=True)
+
 
 # ==============================
 # Input Fields
 # ==============================
 
-st.subheader("Enter Electrical Specifications")
+st.markdown("""
+    <style>
+    .big-title {
+        font-size: 45px !important;
+        font-weight: bold;
+        color: #333333;
+    }
+    .custom-label {
+        font-size:18px;
+        margin-bottom:-58px; /* Pull input box closer */
+        display:block;
+        color: white;
+        font-weight: bold;
+    }
+    </style>
+""", unsafe_allow_html=True)
 
+# Section heading with larger font
+st.markdown(
+
+    "<h3 style='font-size:22px; font-weight:bold; color: yellow; margin-bottom: 5px;'>Enter Electrical Specifications</h3>",
+    unsafe_allow_html=True
+)
+
+# Resonant Frequency
+st.markdown("<span class='custom-label'>Resonant Frequency (GHz)</span>", unsafe_allow_html=True)
 freq = st.number_input(
-    "Resonant Frequency (GHz)",
+    "",
     min_value=37.0, max_value=40.0,
     value=38.0, step=0.1, format="%.3f"
 )
 
+# Minimum S11
+st.markdown("<span class='custom-label'>Minimum S11 (dB)</span>", unsafe_allow_html=True)
 s11 = st.number_input(
-    "Minimum S11 (dB)",
+    "",
     min_value=-60.0, max_value=-10.0,
     value=-20.0, step=0.1, format="%.3f"
 )
 
+# Desired Bandwidth
+st.markdown("<span class='custom-label'>Desired Bandwidth (GHz)</span>", unsafe_allow_html=True)
 bandwidth = st.number_input(
-    "Desired Bandwidth (GHz)",
+    "",
     min_value=0.1, max_value=10.0,
     value=1.0, step=0.1, format="%.3f"
 )
+
 
 # ==============================
 # Prediction
@@ -141,27 +171,33 @@ if st.button("Predict Antenna Parameters"):
     # Step 2: Genesis Ray predicts geometry & achievable bandwidth
     geom_pred = genesis_ray.predict(np.array([[freq, s11, z_real, z_imag]]))
     patch_length, patch_width, feed_width, final_bw = geom_pred[0]
-    
+
     # ==============================
-    # Show Results with styled boxes
+    # Show Results in a clean table
     # ==============================
     st.success("Prediction Complete ✅")
-    st.subheader("Predicted Antenna Parameters")
 
     st.markdown("""
         <style>
-        .result-box {
-            background-color: rgba(0, 0, 0, 0.55);
-            padding: 8px;
-            border-radius: 5px;
-            margin-bottom: 6px;
+        .clean-table {
+            border-collapse: collapse;
+            margin-top: 8px;
+        }
+        .clean-table td {
+            padding: 4px 16px;
             color: white;
+            font-size: 16.5px;
             font-weight: bold;
+            background-color: rgba(0, 0, 0, 0.55);
         }
         </style>
     """, unsafe_allow_html=True)
 
-    st.markdown(f'<div class="result-box">Patch Length: {patch_length:.4f} mm</div>', unsafe_allow_html=True)
-    st.markdown(f'<div class="result-box">Patch Width: {patch_width:.4f} mm</div>', unsafe_allow_html=True)
-    st.markdown(f'<div class="result-box">Feedline Width: {feed_width:.4f} mm</div>', unsafe_allow_html=True)
-    st.markdown(f'<div class="result-box">Achievable Bandwidth: {final_bw:.4f} GHz</div>', unsafe_allow_html=True)
+    st.markdown(f"""
+    <table class="clean-table">
+        <tr><td>Patch Length:</td><td>{patch_length:.4f} mm</td></tr>
+        <tr><td>Patch Width:</td><td>{patch_width:.4f} mm</td></tr>
+        <tr><td>Feedline Width:</td><td>{feed_width:.4f} mm</td></tr>
+        <tr><td>Achievable Bandwidth:</td><td>{final_bw:.4f} GHz</td></tr>
+    </table>
+    """, unsafe_allow_html=True)
