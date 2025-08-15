@@ -114,7 +114,7 @@ st.markdown("<h1 class='big-title'>Genesis Antenna Predictor <br><span style='fo
 st.markdown("""
     <style>
     .big-title {
-        font-size: 45px !important;
+        font-size: 50px !important;
         font-weight: bold;
         color: #333333;
     }
