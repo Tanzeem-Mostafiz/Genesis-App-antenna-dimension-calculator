@@ -89,9 +89,10 @@ def display_constants_box():
         Substrate: Rogers RT5880 (εr)<br>
         Dielectric contant, εr: 2.2<br>
         Substrate Thickness: 0.254 mm<br>
-        Substrate Width: 4.602 mm<br>
         Substrate Length: 3.996 mm<br>
-        Ground: Full<br>
+        Substrate Width: 4.602 mm<br>
+        Ground Length: 3.996 mm<br>
+        Ground Width: 4.602 mm<br>
         Inset Width: 0.395 mm<br>
         Inset Length: 0.6 mm
     </div>
