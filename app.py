@@ -104,7 +104,7 @@ display_constants_box()
 # ==============================
 
 # Custom title
-st.markdown("<h1 class='big-title'>Genesis Antenna Predictor <br><span style='font-size:30px; color:cyan;'>37 to 40 GHz Range</span></h1>", unsafe_allow_html=True)
+st.markdown("<h1 class='big-title'>Genesis Antenna Predictor <br><span style='font-size:30px; color:cyan; font-style:italic;'>37 to 40 GHz Range</span></h1>", unsafe_allow_html=True)
 
 
 # ==============================
@@ -195,9 +195,9 @@ if st.button("PREDICT DIMENSIONS"):
 
     st.markdown(f"""
     <table class="clean-table">
-        <tr><td>Patch Length:</td><td>{patch_length:.4f} mm</td></tr>
-        <tr><td>Patch Width:</td><td>{patch_width:.4f} mm</td></tr>
-        <tr><td>Feedline Width:</td><td>{feed_width:.4f} mm</td></tr>
-        <tr><td>Achievable Bandwidth:</td><td>{final_bw:.4f} GHz</td></tr>
+        <tr><td>Patch Length</td><td>{patch_length:.4f} mm</td></tr>
+        <tr><td>Patch Width</td><td>{patch_width:.4f} mm</td></tr>
+        <tr><td>Feedline Width</td><td>{feed_width:.4f} mm</td></tr>
+        <tr><td>Achievable Bandwidth</td><td>{final_bw:.4f} GHz</td></tr>
     </table>
     """, unsafe_allow_html=True)
