@@ -105,7 +105,7 @@ display_constants_box()
 # ==============================
 
 # Custom title
-st.markdown("<h1 class='big-title'>Genesis Antenna Predictor <br><span style='font-size:30px; color:cyan; font-style:italic;'>37 to 40 GHz Range</span></h1>", unsafe_allow_html=True)
+st.markdown("<h1 class='big-title'>Genesis Antenna Predictor <br><span style='font-size:30px; color:#7DF9FF; font-style:italic;'>37 to 40 GHz Range</span></h1>", unsafe_allow_html=True)
 
 
 # ==============================
@@ -132,7 +132,7 @@ st.markdown("""
 # Section heading with larger font
 st.markdown(
 
-    "<h3 style='font-size:22px; font-weight:bold; color: yellow; margin-bottom: 5px;'>Enter Electrical Specifications</h3>",
+    "<h3 style='font-size:22px; font-weight:bold; color: #FFC000; margin-bottom: 5px;'>Enter Electrical Specifications</h3>",
     unsafe_allow_html=True
 )
 
@@ -164,6 +164,23 @@ bandwidth = st.number_input(
 # ==============================
 # Prediction
 # ==============================
+st.markdown("""
+    <style>
+    div.stButton > button:first-child {
+        background-color: #3F00FF; 
+        color: white;               
+        font-weight: bold;         
+        font-size: 13px;           
+        padding: 7px 7px;        
+        border-radius: 8px;         
+    }
+    div.stButton > button:first-child:hover {
+        background-color: #0818A8; 
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+# Prediction button
 if st.button("PREDICT DIMENSIONS"):
     # Step 1: Genesis Wing predicts Z_real & Z_imag
     z_pred = genesis_wing.predict(np.array([[freq, s11, bandwidth]]))
