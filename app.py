@@ -91,7 +91,7 @@ def display_constants_box():
         Substrate Thickness: 0.254 mm<br>
         Substrate Width: 4.602 mm<br>
         Substrate Length: 3.996 mm<br>
-        Ground Width: Full<br>
+        Ground: Full<br>
         Inset Width: 0.395 mm<br>
         Inset Length: 0.6 mm
     </div>
