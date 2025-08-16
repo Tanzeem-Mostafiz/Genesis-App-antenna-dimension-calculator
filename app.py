@@ -117,7 +117,7 @@ st.markdown("""
     .big-title {
         font-size: 50px !important;
         font-weight: bold;
-        color: #333333;
+        color: white;
     }
     .custom-label {
         font-size:18px;
