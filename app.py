@@ -118,6 +118,7 @@ st.markdown("""
         font-size: 50px !important;
         font-weight: bold;
         color: white;
+        opacity: 1;
     }
     .custom-label {
         font-size:18px;
