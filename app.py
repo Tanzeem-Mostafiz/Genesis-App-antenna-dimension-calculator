@@ -40,7 +40,7 @@ def add_bg_from_local(image_file):
             opacity: 0.95;
         }}
         [data-testid="stHeader"] {{
-            background: rgba(0,0,0,0);
+            background: rgba(255,255,255,0);
         }}
         </style>
         """,
