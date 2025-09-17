@@ -26,27 +26,27 @@ st.set_page_config(page_title="Genesis Antenna Predictor", page_icon="", layout=
 #===============================
 
 # Simple background image from local file
-def add_bg_from_local(image_file):
-    with open(image_file, "rb") as file:
-        encoded_string = base64.b64encode(file.read()).decode()
-    st.markdown(
-        f"""
-        <style>
-        [data-testid="stAppViewContainer"] {{
-            background-image: url("data:image/png;base64,{encoded_string}");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            opacity: 0.95;
-        }}
-        [data-testid="stHeader"] {{
-            background: rgba(255,255,255,0);
-        }}
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
-add_bg_from_local("assets/background.png")
+# def add_bg_from_local(image_file):
+#    with open(image_file, "rb") as file:
+#        encoded_string = base64.b64encode(file.read()).decode()
+#    st.markdown(
+#        f"""
+#       <style>
+#        [data-testid="stAppViewContainer"] {{
+#            background-image: url("data:image/png;base64,{encoded_string}");
+#            background-size: cover;
+#            background-repeat: no-repeat;
+#            background-attachment: fixed;
+#            opacity: 0.95;
+#        }}
+#        [data-testid="stHeader"] {{
+#            background: rgba(0,0,0,0);
+#        }}
+#        </style>
+#        """,
+#        unsafe_allow_html=True
+#    )
+#add_bg_from_local("assets/background.png")
 
 #===============================
 # Display top-right image
