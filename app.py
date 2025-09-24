@@ -105,7 +105,7 @@ display_constants_box()
 # ==============================
 
 # Custom title
-st.markdown("<h1 class='big-title'>Genesis Antenna Predictor <br><span style='font-size:30px; color:#7DF9FF; font-style:italic;'>37 to 40 GHz Range</span></h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='font-size:50px; color: white;'>Genesis Antenna Predictor <br><span style='font-size:30px; color:#7DF9FF; font-style:italic;'>37 to 40 GHz Range</span></h1>", unsafe_allow_html=True)
 
 
 # ==============================
@@ -114,11 +114,6 @@ st.markdown("<h1 class='big-title'>Genesis Antenna Predictor <br><span style='fo
 
 st.markdown("""
     <style>
-    .big-title {
-        font-size: 50px !important;
-        font-weight: bold;
-        color: white;
-    }
     .custom-label {
         font-size:18px;
         margin-bottom:-58px; /* Pull input box closer */
