@@ -26,12 +26,12 @@ st.set_page_config(page_title="Genesis Antenna Predictor", page_icon="", layout=
 #===============================
 
 # Simple background image from local file
-def add_bg_from_local(image_file):
+ def add_bg_from_local(image_file):
     with open(image_file, "rb") as file:
         encoded_string = base64.b64encode(file.read()).decode()
     st.markdown(
         f"""
-        <style>
+       <style>
         [data-testid="stAppViewContainer"] {{
             background-image: url("data:image/png;base64,{encoded_string}");
             background-size: cover;
@@ -114,6 +114,15 @@ st.markdown("<h1 style='font-size:50px; color: white;'>Genesis Antenna Predictor
 
 st.markdown("""
     <style>
+<<<<<<< HEAD
+=======
+    .big-title {
+        font-size: 50px !important;
+        font-weight: bold;
+        color: white;
+        opacity: 1;
+    }
+>>>>>>> 830a4c061cfa8dff582725f686c48cd004a00fe4
     .custom-label {
         font-size:18px;
         margin-bottom:-58px; /* Pull input box closer */
