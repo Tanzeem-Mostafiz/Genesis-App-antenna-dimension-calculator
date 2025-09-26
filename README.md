@@ -5,6 +5,10 @@
 Live Demo: [https://genesis-app.streamlit.app/](https://genesis-app.streamlit.app/)
 
 ---
+## Authors
+- **Tanzeem Mostafiz** – Developed the web application, contributed to model development, and co-authored the paper  
+- **Anik Paul** – Contributed to research, model development and paper writing  
+- **Tanvir Ibna Azaz** – Contributed to paper writing
 
 ## Features
 
@@ -91,11 +95,6 @@ Genesis-App/
  - Streamlit
  - Pandas, NumPy, Matplotlib, Plotly
  - CatBoost (machine learning models)
-
-## Authors
-- **Tanzeem Mostafiz** – Developed the web application, contributed to model development, and co-authored the paper  
-- **Anik** – Contributed to research, model development and paper writing  
-- **Tanvir** – Contributed to paper writing
 
 ## License
 
