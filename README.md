@@ -1,6 +1,9 @@
 # Genesis Antenna Predictor
 
-**Authors:** Tanzeem Mostafiz, Anik Paul, Tanvir Ibna Azaz  
+## Authors
+- **Tanzeem Mostafiz** – Contributed to the development of the web application  
+- **Anik Paul**  
+- **Tanvir Ibna Azaz**
 
 **Genesis Antenna Predictor** is a web-based tool developed as part of our undergraduate thesis and later written as a journal paper. It uses machine learning models trained on the Noah dataset to predict key microstrip patch antenna dimensions—such as patch width, patch length, and feedline width—directly from user-defined electrical specifications. Designed for the 37–40 GHz range, it provides fast, real-time predictions to support high-frequency antenna design and research.
 
