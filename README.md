@@ -1,6 +1,8 @@
 # Genesis Antenna Predictor
 
-**Genesis Antenna Predictor** is a web-based tool that predicts microstrip patch antenna dimensions based on user-defined electrical specifications. This app leverages machine learning models trained with the Noah dataset to provide **real-time predictions** for antenna design in the 37-40 GHz range.
+**Authors:** Tanzeem Mostafiz, Anik Paul, Tanvir Ibna Azaz  
+
+**Genesis Antenna Predictor** is a web-based tool developed as part of our undergraduate thesis and later written as a journal paper. It uses machine learning models trained on the Noah dataset to predict key microstrip patch antenna dimensions—such as patch width, patch length, and feedline width—directly from user-defined electrical specifications. Designed for the 37–40 GHz range, it provides fast, real-time predictions to support high-frequency antenna design and research.
 
 Live Demo: [https://genesis-app.streamlit.app/](https://genesis-app.streamlit.app/)
 
